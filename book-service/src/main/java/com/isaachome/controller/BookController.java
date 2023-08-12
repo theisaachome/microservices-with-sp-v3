@@ -1,5 +1,6 @@
 package com.isaachome.controller;
 
+import com.isaachome.dto.APIResponse;
 import com.isaachome.dto.BookDTO;
 import com.isaachome.service.BookService;
 import org.springframework.http.HttpStatus;
@@ -28,5 +29,11 @@ public class BookController {
     @PostMapping()
     public ResponseEntity<BookDTO> addNewBook(@RequestBody BookDTO bookDTO){
         return  new ResponseEntity<>(bookService.save(bookDTO), HttpStatus.CREATED);
+    }
+    // get A book by Id
+    // localhost:8082/api/books/2
+    @GetMapping("/{id}")
+    public ResponseEntity<APIResponse> getBookByID(@PathVariable("id")long book_id){
+        return  new ResponseEntity<>(bookService.getBookById(book_id),HttpStatus.OK);
     }
 }

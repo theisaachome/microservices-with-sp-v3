@@ -17,4 +17,5 @@ public class BookDTO {
     private int totalPage;
     private  double rating;
     private LocalDate publishedDate;
+    private  long authorId;
 }

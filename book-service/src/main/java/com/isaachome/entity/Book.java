@@ -27,9 +27,10 @@ public class Book {
     @Column(name = "total_page",nullable = false)
     private int totalPage;
     private  double rating;
-
     @JsonFormat(pattern="yyyy-MM-dd")
     @Column(name = "published_date")
     private LocalDate publishedDate;
+    @Column(name = "author_id",nullable = false)
+    private  long authorId;
 
 }
